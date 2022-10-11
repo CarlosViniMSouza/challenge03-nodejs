@@ -1,12 +1,9 @@
 const express = require("express");
-
 const { v4: uuid } = require("uuid");
-
 const app = express();
+const repositories = [];
 
 app.use(express.json());
-
-const repositories = [];
 
 app.get("/repositories", (request, response) => {
   return response.json(repositories);
