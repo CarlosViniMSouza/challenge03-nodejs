@@ -45,19 +45,19 @@ app.put("/repositories/:id", (request, response) => {
   return response.json(repository);
 });
 
-// Status -> In Progress
+// Status -> done
 app.delete("/repositories/:id", (request, response) => {
   const { id } = request.params;
 
   const repositoryIndex = repositories.findIndex(repository => repository.id === id);
 
-  if (repositoryIndex > 0) {
+  if (repositoryIndex < 0) {
     return response.status(404).json({ error: "Repository not found" });
   }
 
   repositories.splice(repositoryIndex, 1);
 
-  return response.status(204).send();
+  return response.status(204).json({ "msg": "Repository Deleted" });
 });
 
 // Tests suit 'Likes' -> done
