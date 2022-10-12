@@ -1,4 +1,4 @@
 git add .
-git commit -m "Tests: 1 failed, 8 passed, 9 total"
+git commit -m "Tests: 9 passed, 9 total -> Concluded"
 git push
 git status
